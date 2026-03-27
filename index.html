@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Learners Academy | Learn German</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS (CDN for instant deployment) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgDark: '#0A0A0A',
+                        gold: '#F4C430',
+                        darkGold: '#D9A520',
+                        redAccent: '#E63946',
+                        deepRed: '#A4161A',
+                        textLight: '#F5F5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-bgDark text-textLight font-sans antialiased selection:bg-gold selection:text-bgDark">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 pointer-events-auto" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="#" class="flex items-center gap-2 group">
+                        <img src="images/logo.png" alt="Excel Learners Academy Logo" class="h-12 w-auto group-hover:scale-105 transition-transform">
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-textLight hover:text-gold transition-colors font-medium">Home</a>
+                    <a href="#about" class="nav-link text-textLight hover:text-gold transition-colors font-medium">About</a>
+                    <a href="#courses" class="nav-link text-textLight hover:text-gold transition-colors font-medium">Courses</a>
+                    <a href="#media" class="nav-link text-textLight hover:text-gold transition-colors font-medium">Media</a>
+                    <a href="#contact" class="nav-link text-textLight hover:text-gold transition-colors font-medium">Contact</a>
+                    <a href="https://wa.me/923339724039" target="_blank" class="px-5 py-2 rounded-full bg-gold text-bgDark font-bold hover:bg-darkGold transition-all transform hover:scale-105 hover:shadow-[0_0_15px_rgba(244,196,48,0.5)]">
+                        <i class="fa-brands fa-whatsapp mr-2"></i>Enroll Now
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-textLight hover:text-gold focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bgDark/95 backdrop-blur-md border-t border-white/10 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#home" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-textLight hover:text-gold hover:bg-white/5">Home</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-textLight hover:text-gold hover:bg-white/5">About</a>
+                <a href="#courses" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-textLight hover:text-gold hover:bg-white/5">Courses</a>
+                <a href="#media" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-textLight hover:text-gold hover:bg-white/5">Media</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-textLight hover:text-gold hover:bg-white/5">Contact</a>
+                <a href="https://wa.me/923339724039" target="_blank" class="mt-4 block text-center px-5 py-3 rounded-md bg-gold text-bgDark font-bold hover:bg-darkGold transition-all">
+                    Enroll via WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Abstract Background Shapes -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl mix-blend-screen animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-redAccent/5 rounded-full blur-3xl mix-blend-screen" style="animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite reverse;"></div>
+            <!-- Grid overlay -->
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-left space-y-8 fade-in-section">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gold text-sm font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                        Premium German Language Institute
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+                        Learn German with <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-darkGold">ELA</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-xl font-light leading-relaxed">
+                        Your gateway to studying or moving to Germany. We teach the German language using your mother tongue for a crystal-clear understanding.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#courses" class="px-8 py-4 rounded-full bg-gold text-bgDark font-bold text-lg hover:bg-white hover:shadow-[0_0_20px_rgba(244,196,48,0.4)] transition-all transform hover:-translate-y-1">
+                            Explore Courses
+                        </a>
+                        <a href="#contact" class="px-8 py-4 rounded-full border border-white/20 text-textLight font-bold text-lg hover:border-gold hover:text-gold transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                            Contact Us <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+                        <div>
+                            <div class="text-3xl font-bold text-textLight">5.0<i class="fa-solid fa-star text-gold text-lg ml-1"></i></div>
+                            <div class="text-sm text-gray-500 uppercase tracking-wider mt-1">Google Rating</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-textLight">100%</div>
+                            <div class="text-sm text-gray-500 uppercase tracking-wider mt-1">Support</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-textLight">A1-B1</div>
+                            <div class="text-sm text-gray-500 uppercase tracking-wider mt-1">Levels</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image / Visual -->
+                <div class="relative fade-in-section" style="transition-delay: 0.2s;">
+                    <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden glass-panel border border-white/10 transform rotate-2 hover:rotate-0 transition-all duration-500">
+                        <!-- Abstract flag visual instead of placeholder -->
+                        <div class="absolute inset-0 flex flex-col">
+                            <div class="h-1/3 bg-black/80 flex items-center justify-center border-b border-red-500/20"></div>
+                            <div class="h-1/3 bg-red-600/80 flex items-center justify-center border-b border-gold/20"></div>
+                            <div class="h-1/3 bg-gold/80 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-t from-bgDark to-transparent"></div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-bgDark/40 backdrop-blur-[2px] flex items-center justify-center p-8">
+                            <div class="text-center">
+                                <i class="fa-solid fa-earth-europe text-6xl text-gold mb-6 drop-shadow-[0_0_15px_rgba(244,196,48,0.5)]"></i>
+                                <h3 class="text-2xl font-bold mb-2">Peshawar to Germany</h3>
+                                <p class="text-gray-300">Expert guidance for student visas and relocation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative bg-bgDark/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="text-gold font-semibold tracking-widest uppercase mb-2">About The Academy</h2>
+                <h3 class="text-4xl md:text-5xl font-bold">Why Choose ELA?</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-gold/50 transition-colors group fade-in-section">
+                    <div class="w-14 h-14 rounded-full bg-redAccent/10 text-redAccent flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-redAccent group-hover:text-white transition-all">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Mother Tongue Focus</h4>
+                    <p class="text-gray-400 group-hover:text-gray-300 transition-colors">We explain complex German grammar rules using your native language, ensuring a deeper and crystal clear understanding.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-gold/50 transition-colors group fade-in-section" style="transition-delay: 0.1s;">
+                    <div class="w-14 h-14 rounded-full bg-gold/10 text-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-gold group-hover:text-bgDark transition-all">
+                        <i class="fa-solid fa-passport"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Visa & Relocation</h4>
+                    <p class="text-gray-400 group-hover:text-gray-300 transition-colors">Beyond language, we provide expert counseling and guidance for your student visa application and moving to Germany.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-gold/50 transition-colors group fade-in-section" style="transition-delay: 0.2s;">
+                    <div class="w-14 h-14 rounded-full bg-deepRed/10 text-deepRed flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-deepRed group-hover:text-white transition-all">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Friendly Environment</h4>
+                    <p class="text-gray-400 group-hover:text-gray-300 transition-colors">Our students frequently highlight the highly professional yet friendly learning atmosphere that encourages active participation.</p>
+                </div>
+            </div>
+
+            <!-- Instructor snippet -->
+            <div class="mt-20 glass-panel rounded-3xl p-8 md:p-12 border-l-4 border-gold fade-in-section">
+                <div class="md:flex gap-10 items-center">
+                    <div class="w-24 h-24 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center mb-6 md:mb-0">
+                        <i class="fa-solid fa-user-tie text-4xl text-gray-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-2">A Dedicated Approach to Success</h4>
+                        <p class="text-gray-300 text-lg italic leading-relaxed">
+                            "Our mission is to bridge the gap between your current location and your dream of studying in Germany. By simplifying the language barriers, we pave a direct path to your success."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-24 relative overflow-hidden">
+        <div class="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 fade-in-section">
+                <div>
+                    <h2 class="text-gold font-semibold tracking-widest uppercase mb-2">Our Programs</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold">Standardized German Courses</h3>
+                </div>
+                <div class="mt-4 md:mt-0 text-gray-400">
+                    <p>5 Days a week | Morning & Evening Batches</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Course A1 -->
+                <div class="group relative bg-[#111] border border-white/5 rounded-3xl overflow-hidden hover:border-gold/30 transition-all hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] fade-in-section">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white/10 to-white/10 group-hover:from-gold group-hover:to-redAccent transition-all duration-500"></div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-4xl font-black text-white">A1</h4>
+                            <span class="bg-white/10 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider text-gray-300">Beginner</span>
+                        </div>
+                        <h5 class="text-xl font-bold mb-4">Breakthrough Level</h5>
+                        <ul class="space-y-3 mb-8 text-gray-400">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-clock text-gold mt-1"></i> ~10 Weeks (2.5 Months)</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-calendar-days text-gold mt-1"></i> 5 Days / Week</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-sun text-gold mt-1"></i> 10 AM (Female) / 11 AM (General)</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-moon text-gold mt-1"></i> Evening slots available</li>
+                        </ul>
+                        <div class="pt-6 border-t border-white/10">
+                            <a href="https://wa.me/923339724039" target="_blank" class="block w-full text-center py-3 rounded-xl bg-white/5 hover:bg-gold hover:text-bgDark font-bold transition-all">Enroll to A1</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course A2 -->
+                <div class="group relative bg-[#111] border border-white/5 rounded-3xl overflow-hidden hover:border-gold/30 transition-all hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] fade-in-section" style="transition-delay: 0.1s;">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white/10 to-white/10 group-hover:from-gold group-hover:to-redAccent transition-all duration-500"></div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-4xl font-black text-white">A2</h4>
+                            <span class="bg-white/10 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider text-gray-300">Elementary</span>
+                        </div>
+                        <h5 class="text-xl font-bold mb-4">Waystage Level</h5>
+                        <ul class="space-y-3 mb-8 text-gray-400">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-clock text-gold mt-1"></i> ~10 Weeks (2.5 Months)</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-calendar-days text-gold mt-1"></i> 5 Days / Week</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-sun text-gold mt-1"></i> 10 AM (Female) / 11 AM (General)</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-moon text-gold mt-1"></i> Evening slots available</li>
+                        </ul>
+                        <div class="pt-6 border-t border-white/10">
+                            <a href="https://wa.me/923339724039" target="_blank" class="block w-full text-center py-3 rounded-xl bg-white/5 hover:bg-gold hover:text-bgDark font-bold transition-all">Enroll to A2</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course B1 -->
+                <div class="group relative bg-[#111] border border-white/5 rounded-3xl overflow-hidden hover:border-gold/30 transition-all hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] transform lg:-translate-y-4 fade-in-section" style="transition-delay: 0.2s;">
+                    <!-- Highlight badge -->
+                    <div class="absolute top-0 right-0 bg-gold text-bgDark text-xs font-bold px-4 py-1 rounded-bl-xl z-10">Most Popular</div>
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold to-redAccent transition-all duration-500"></div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6 pt-2">
+                            <h4 class="text-4xl font-black text-white">B1</h4>
+                            <span class="bg-gold/20 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider text-gold">Intermediate</span>
+                        </div>
+                        <h5 class="text-xl font-bold mb-4">Threshold Level</h5>
+                        <ul class="space-y-3 mb-8 text-gray-400">
+                            <li class="flex items-start gap-3 text-white font-medium"><i class="fa-solid fa-clock text-redAccent mt-1"></i> ~12 Weeks (3.0 Months)</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-calendar-days text-gold mt-1"></i> 5 Days / Week</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-sun text-gold mt-1"></i> 10 AM (Female) / 11 AM (General)</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-moon text-gold mt-1"></i> Evening slots available</li>
+                        </ul>
+                        <div class="pt-6 border-t border-white/10">
+                            <a href="https://wa.me/923339724039" target="_blank" class="block w-full text-center py-4 rounded-xl bg-gradient-to-r from-gold to-darkGold text-bgDark font-bold hover:shadow-[0_0_20px_rgba(244,196,48,0.4)] transition-all transform hover:-translate-y-1">Enroll to B1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Highlights -->
+    <section class="py-20 relative bg-[#0f0f0f]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">What Our Students Say</h2>
+                    
+                    <div class="space-y-6 relative">
+                        <!-- Quote Icon Background -->
+                        <i class="fa-solid fa-quote-left absolute -top-4 -left-6 text-6xl text-white/5"></i>
+                        
+                        <div class="glass-panel p-6 rounded-2xl border-l-2 border-gold relative z-10">
+                            <div class="flex items-center gap-2 text-gold mb-3 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-300 italic">"Very friendly learning environment. The teachers are highly professional and they make complex grammar easy to understand."</p>
+                            <div class="mt-4 text-sm font-bold text-white">— Successful A2 Student</div>
+                        </div>
+
+                        <div class="glass-panel p-6 rounded-2xl border-l-2 border-redAccent relative z-10 ml-8">
+                            <div class="flex items-center gap-2 text-gold mb-3 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-300 italic">"The best institute in Peshawar for German language. Their guidance for the student visa process was invaluable."</p>
+                            <div class="mt-4 text-sm font-bold text-white">— B1 Graduate in Germany</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-section text-center lg:text-right">
+                    <div class="inline-block p-2 rounded-3xl bg-gradient-to-br from-gold/20 to-redAccent/20">
+                        <div class="bg-bgDark rounded-2xl p-8 border border-white/5">
+                            <div class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gold to-white mb-2">5.0</div>
+                            <div class="flex items-center justify-center lg:justify-end gap-1 text-gold text-xl mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-400 font-medium">Verified Google Reviews</p>
+                            <a href="https://web.facebook.com/profile.php?id=61587478100818" target="_blank" class="inline-flex items-center gap-2 mt-6 text-sm font-bold text-gold hover:text-white transition-colors">
+                                View Facebook Page <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media / Gallery Section -->
+    <section id="media" class="py-24 relative bg-bgDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="text-gold font-semibold tracking-widest uppercase mb-2">Life at ELA</h2>
+                <h3 class="text-4xl md:text-5xl font-bold">Gallery & Reels</h3>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Image Grid -->
+                <div class="lg:col-span-2 grid grid-cols-2 gap-4">
+                    <div class="img-zoom-container bg-black/50 rounded-2xl h-48 md:h-64 glass-panel border border-white/10 flex items-center justify-center fade-in-section overflow-hidden">
+                        <img src="images/img1.png" alt="Gallery Image 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="img-zoom-container bg-black/50 rounded-2xl h-48 md:h-64 glass-panel border border-white/10 flex items-center justify-center fade-in-section overflow-hidden" style="transition-delay: 0.1s;">
+                        <img src="images/img2.png" alt="Gallery Image 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="img-zoom-container bg-black/50 rounded-2xl h-48 md:h-64 col-span-2 glass-panel border border-white/10 flex items-center justify-center fade-in-section overflow-hidden relative group" style="transition-delay: 0.2s;">
+                        <img src="images/img3.png" alt="Gallery Image 3" class="w-full h-full object-cover absolute inset-0 z-0 opacity-60 group-hover:opacity-40 transition-opacity">
+                        <div class="text-center relative z-10 p-8 pointer-events-none">
+                            <h4 class="text-2xl font-bold text-white mb-2 drop-shadow-md pb-1 text-shadow-xl">Start Your Journey Today</h4>
+                            <p class="text-gray-200 drop-shadow-md font-medium">Join our successful alumni in Germany</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facebook Reels Plugin -->
+                <div class="glass-panel rounded-3xl p-6 border border-white/10 fade-in-section flex flex-col items-center justify-center min-h-[500px]" style="transition-delay: 0.3s;">
+                    <h4 class="text-xl font-bold mb-6 text-center w-full border-b border-white/10 pb-4">Latest Updates</h4>
+                    <!-- Note: Facebook Page Plugin -->
+                    <div class="bg-white rounded-xl overflow-hidden w-full flex justify-center pb-4">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2Fprofile.php%3Fid%3D61587478100818&tabs=timeline&width=340&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <a href="https://web.facebook.com/profile.php?id=61587478100818" target="_blank" class="mt-6 text-gold font-bold hover:text-white transition-colors">Follow us on Facebook &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-24 relative overflow-hidden bg-[#0f0f0f]">
+        <!-- Contact Decoration -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-redAccent/5 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="text-gold font-semibold tracking-widest uppercase mb-2">Get In Touch</h2>
+                <h3 class="text-4xl md:text-5xl font-bold">Start Your Registration</h3>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info & Map -->
+                <div class="space-y-8 fade-in-section">
+                    <div class="glass-panel p-8 rounded-3xl border border-white/5">
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold/10 text-gold flex items-center justify-center flex-shrink-0 text-xl">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-lg font-bold text-white">Our Location</h5>
+                                    <p class="text-gray-400 mt-1">New Arbab Colony, Arbab Road, Peshawar, Pakistan, 25000</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold/10 text-gold flex items-center justify-center flex-shrink-0 text-xl">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-lg font-bold text-white">Phone / WhatsApp</h5>
+                                    <p class="text-gray-400 mt-1"><a href="tel:+923339724039" class="hover:text-gold transition-colors">+92 333 9724039</a></p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold/10 text-gold flex items-center justify-center flex-shrink-0 text-xl">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-lg font-bold text-white">Email Address</h5>
+                                    <p class="text-gray-400 mt-1"><a href="mailto:hashim877654@gmail.com" class="hover:text-gold transition-colors">hashim877654@gmail.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 pt-4 border-t border-white/10">
+                                <div class="w-12 h-12 rounded-full bg-gold/10 text-gold flex items-center justify-center flex-shrink-0 text-xl">
+                                    <i class="fa-solid fa-hashtag"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-lg font-bold text-white mb-2">Social Profiles</h5>
+                                    <div class="flex gap-4">
+                                        <a href="https://web.facebook.com/profile.php?id=61587478100818" target="_blank" class="text-2xl text-gray-400 hover:text-[#1877F2] transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                                        <a href="https://www.instagram.com/germanwithm/" target="_blank" class="text-2xl text-gray-400 hover:text-[#E4405F] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="https://www.tiktok.com/@germen_m" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps Embed for Peshawar Abdara Road area -->
+                    <div class="rounded-3xl overflow-hidden h-64 border border-white/10 glass-panel">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13233.155827364835!2d71.4939023!3d33.9961655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d910d51fa93d43%3A0xeab5d50fd921f64f!2sAbdara%20Rd%2C%20Peshawar%2C%20Khyber%20Pakhtunkhwa%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-panel p-8 md:p-10 rounded-3xl border border-white/5 fade-in-section" style="transition-delay: 0.2s;">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                            <input type="text" id="name" required class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none transition-colors" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                            <input type="email" id="email" required class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none transition-colors" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label for="courseSelection" class="block text-sm font-medium text-gray-400 mb-2">Course of Interest</label>
+                            <select id="courseSelection" class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none transition-colors appearance-none">
+                                <option value="A1">A1 Level</option>
+                                <option value="A2">A2 Level</option>
+                                <option value="B1">B1 Level</option>
+                                <option value="Counseling">Visa Counseling</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Your Message</label>
+                            <textarea id="message" rows="4" required class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none transition-colors" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" id="formBtn" class="w-full bg-gold text-bgDark font-bold py-4 rounded-xl hover:bg-white hover:shadow-[0_0_20px_rgba(244,196,48,0.4)] transition-all flex justify-center items-center">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Branding -->
+                <div class="col-span-2">
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <img src="images/logo.png" alt="Excel Learners Academy Logo" class="h-12 w-auto">
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Premium German Language Institute in Peshawar. We provide expert teaching methodologies and visa counseling to make your dream of moving to Germany a reality.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="https://web.facebook.com/profile.php?id=61587478100818" target="_blank" class="w-10 h-10 rounded-full bg-[#1877F2]/10 flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all transform hover:scale-110">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/germanwithm/" target="_blank" class="w-10 h-10 rounded-full bg-[#E4405F]/10 flex items-center justify-center text-[#E4405F] hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white transition-all transform hover:scale-110 border-0">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@germen_m" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-black border border-transparent hover:border-white transition-all transform hover:scale-110">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-gold transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="#courses" class="hover:text-gold transition-colors">Our Courses</a></li>
+                        <li><a href="#media" class="hover:text-gold transition-colors">Gallery & Media</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Open Hours -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Working Hours</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex justify-between border-b border-white/5 pb-1"><span>Monday - Friday</span> <span>10:00 - 20:00</span></li>
+                        <li class="flex justify-between border-b border-white/5 pb-1 mt-2"><span>Saturday</span> <span>10:00 - 15:00</span></li>
+                        <li class="flex justify-between items-center mt-2 text-redAccent pb-1"><span>Sunday</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 text-center sm:flex sm:justify-between items-center">
+                <p class="text-sm text-gray-500">&copy; 2026 Excel Learners Academy. All rights reserved.</p>
+                <div class="mt-4 sm:mt-0 space-x-4 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts injected later via script.js, styling via style.css -->
+    <script src="script.js"></script>
+</body>
+</html>
